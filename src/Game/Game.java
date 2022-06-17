@@ -3,7 +3,7 @@ package Game;
 public class Game {
 
     private int currRoll = 0;
-    private int[] rolls = new int[25];// max amount of rolls
+    private final int[] rolls = new int[25];// max amount of rolls
     int score = 0;
 
     public int getScore(){ // wynik
@@ -13,11 +13,9 @@ public class Game {
                 if( frame == 9 && rolls[cursor+2] != 10){
                     score +=10 + (rolls[cursor+2]*2);
                     cursor +=2;
-                    continue;
                 } else if(rolls[cursor+2] == 10){
                     score +=10 + rolls[cursor+2] + rolls[cursor+4] ;
                     cursor +=2;
-                    continue;
                 } else {
 
                     score += 10 + rolls[cursor + 2] + rolls[cursor + 3];
